@@ -70,14 +70,12 @@ img {
 <pre class="r"><code>temp_data &lt;- tempfile()
 download.file(&quot;https://d396qusza40orc.cloudfront.net/repdata/data/activity.zip&quot;,temp_data,method=&quot;curl&quot;)
 mydata &lt;- read.csv(unz(temp_data, &quot;activity.csv&quot;),sep=&quot;,&quot;,na.strings=&quot;NA&quot;)
-mydata$sdate&lt;-strptime(mydata$date,&quot;%Y-%m-%d&quot;)
 unlink(temp_data)
 str(mydata)</code></pre>
-<pre><code>## 'data.frame':    17568 obs. of  4 variables:
+<pre><code>## 'data.frame':    17568 obs. of  3 variables:
 ##  $ steps   : int  NA NA NA NA NA NA NA NA NA NA ...
 ##  $ date    : Factor w/ 61 levels &quot;2012-10-01&quot;,&quot;2012-10-02&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...
-##  $ sdate   : POSIXlt, format: &quot;2012-10-01&quot; &quot;2012-10-01&quot; ...</code></pre>
+##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...</code></pre>
 </div>
 <div id="what-is-mean-total-number-of-steps-taken-per-day" class="section level2">
 <h2>What is mean total number of steps taken per day?</h2>
